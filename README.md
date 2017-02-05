@@ -1,5 +1,5 @@
 # relative.path
-always return the relative path from the current working file:)
+always return the relative path from the current working file😊
 
 ## What does that mean?
 It means you will not figure out the level of '../../../../' of relative path yourself any more. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path of the current file, whose path is relative to the configure file **path.json**.
