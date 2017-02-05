@@ -1,0 +1,4 @@
+{
+	"rootPath": "src/lib",
+	"paths": ["a", "b"]
+}
