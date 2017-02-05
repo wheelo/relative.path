@@ -2,7 +2,7 @@
 always return the relative path from the current working file😊
 
 ## What does that mean?
-It means you will not figure out the level of '../../../../' of relative path yourself any more. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path of the current file, whose path is relative to the configure file **path.json**.
+It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path of the current file, whose path is relative to the configure file **path.json**.
 
 ## Requirement
 Since `Proxy` is one advanced feature in ES2016. No flag is required for Node.js `v6.*`; use `node --harmony_proxies` flag for `v5.*` and `v4.*`.
