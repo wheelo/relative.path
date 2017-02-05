@@ -19,11 +19,16 @@ Since `Proxy` is one advanced feature in ES2016. No flag is required for Node.js
 ```sh
 import relative from 'relative.path';
 
-console.log(relative.path); 	// # print: '../../../../' relative to the configure file
+// You must use the 'require' to import related library, though the print out value is correct
+// console.log(relative.path); 	// # print: '../../../../' relative to the configure file
+const lib = require(relative.path + 'src/lib/xxx');
+
 ```
 **Note**: 
 - You may need the configure of multiple paths in some projects, in these cases you should add another param `paths` in **path.json** to switch to `group` Mode
 - When you omit the file **path.json**，the default path is your **CWD**, i.e. the root path of your project 
+- You must use the `require` instead of `import` to import your usage library, though the print out value is correct
+
 
 ## Dependencies
 - [path.relative(from, to)](https://nodejs.org/api/path.html#path_path_relative_from_to)
