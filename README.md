@@ -2,7 +2,9 @@
 always return the relative path from the current working file😊
 
 ## What does that mean?
-It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path prefix of the current file, whose path relative to the configure file **path.json**.
+It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path prefix of the current file, whose path relative to the configure file **path.json**.🙌 
+
+Have fun~😊
 
 ## Requirement
 Since the library uses ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
