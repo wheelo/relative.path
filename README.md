@@ -5,9 +5,14 @@ always return the relative path from the current working file😊
 It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path prefix of the current file, whose path relative to the configure file **path.json**.
 
 ## Requirement
-Since the library use ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
+Since the library uses ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
 
 ## Usage
+- install the npm package use the command:
+```sh
+	>> npm i -S relative.path
+```
+
 - added the file **path.json** in your project root path, this file works as the configure file. The **path.json** file looks like this:
 ```sh
 {
@@ -18,6 +23,7 @@ Since the library use ES2015 `Proxy` as the dependency. You'd better use the lib
 	"paths": ["src", "src/lib"]
 }
 ```
+
 - when you use it, you use the library in your file in this way:
 ```sh
 import relative from 'relative.path';
