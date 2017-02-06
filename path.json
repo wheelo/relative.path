@@ -1,4 +1,4 @@
 {
-	"rootPath": "src/lib",
-	"paths": ["a", "b"]
+	"path": "src/lib",
+	"paths": ["src", "src/lib"]
 }
