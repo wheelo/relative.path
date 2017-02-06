@@ -1,13 +1,13 @@
 # relative.path
 always return the relative path from the current working file😊
 
-## What does that mean?
+### What does that mean?
 It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path prefix of the current file, whose path relative to the configure file **path.json**.
 
-## Requirement
+### Requirement
 Since the library use ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
 
-## Usage
+### Usage
 - added the file **path.json** in your project root path, this file works as the configure file. The **path.json** file looks like this:
 ```sh
 {
@@ -35,7 +35,7 @@ const lib = require(relative.path + 'src/lib/xxx');
 - You must use the `require` instead of `import` to import your usage library, though the print out value is correct
 
 
-## Dependencies
+### Dependencies
 - [path.relative(from, to)](https://nodejs.org/api/path.html#path_path_relative_from_to)
 - [ES2015 Proxy](https://hacks.mozilla.org/2015/07/es6-in-depth-proxies-and-reflect)
 
