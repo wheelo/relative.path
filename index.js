@@ -40,10 +40,11 @@ const handler = {
         }
 
         let rootPath = path.resolve(process.cwd()) + relativePath;
+
+        const relative = path.relative(module.parent.filename, rootPath) + '/';
         delete require.cache[__filename];
 
-        return path.relative(module.parent.filename, rootPath) + '/';
-       
+        return relative;
     }
 
 };
