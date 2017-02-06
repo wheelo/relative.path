@@ -5,7 +5,7 @@ always return the relative path from the current working file😊
 It means you will no longer waste your time figuring out how many levels of relative path, like this one: '../../../../../../../'. When you import the library and use the getter `.path`, the underearth library will figure out the exact relative path prefix of the current file, whose path relative to the configure file **path.json**.
 
 ## Requirement
-Since `Proxy` is one advanced feature in ES2016. No flag is required for Node.js `v6.*`; use `node --harmony_proxies` flag for `v5.*` and `v4.*`.
+Since the library use ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
 
 ## Usage
 - added the file **path.json** in your project root path, this file works as the configure file. The **path.json** file looks like this:
@@ -26,7 +26,7 @@ import relative from 'relative.path';
 // Though the print out value is correct
 console.log(relative.path); 	// # print: '../../../../' relative to the configure file
 const lib = require(relative.path + 'src/lib/xxx');
-//const lib = require(relative.paths[0] + 'src/lib/xxx');
+//const lib = require(relative.paths[1] + 'xxx');
 
 ```
 **Note**: 
