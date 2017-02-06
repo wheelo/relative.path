@@ -30,14 +30,14 @@ Since the library uses ES2015 `Proxy` as the dependency. You'd better use the li
 ```sh
 import relative from 'relative.path';
 
-// You must use the 'require'  instead of `import` to import related library
+// You must use the 'require'  instead of 'import' to import related library
 // Though, the print out value is correct :(
 console.log(relative.path); 	// # print: '../../../../' relative to the 'path.json'
 
 const lib = require(relative.path + 'src/lib/xxx');
 ```
 - **Multiple Paths Mode**
- 
+
 There are two choices you can opt in to denote the `Multiple Paths` Mode. Firstly, you can either denote one random key in **path.json** and use the identical getter in corresponding js file. Secondly, you can also add another param `paths` to switch to the `array` Mode in the outermost level of the **path.json**. In the latter one case, you just append the wanted paths to the array of the key `paths`.
 ```sh
 const libRandom = require(relative.randomPath + 'xxx');
@@ -45,7 +45,7 @@ const libArray = require(relative.paths[1] + 'xxx');
 ```
 **Note**
 - When you omit the file **path.json**，the default path is your **CWD**, i.e. the root path of your project 
-- You must use the `require` instead of 'import' to import your usage library, though the print out value is correct
+- You must use the `require` instead of `import` to import the file in your current file, though the print out value is correct
 
 
 ## Dependencies
