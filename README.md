@@ -30,10 +30,11 @@ Since the library uses ES2015 `Proxy` as the dependency. You'd better use the li
 ```sh
 import relative from 'relative.path';
 
-// You must use the 'require'  instead of 'import' to import related library
-// Though, the print out value is correct :(
-console.log(relative.path); 	// # print: '../../../../' relative to the 'path.json'
 
+// print: '../../../../' which relative to the 'path.json'
+console.log(relative.path); 	
+// You must use the 'require'  instead of 'import' to import related library
+// Though, the print out value is correct 😂
 const lib = require(relative.path + 'src/lib/xxx');
 ```
 - **Multiple Paths Mode**
