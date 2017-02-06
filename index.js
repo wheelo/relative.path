@@ -1,29 +1,67 @@
+// author: wheelo(github.com/wheelo)
+// date: 2017.2.6
+
 'use strict'
 
-var path = require('path')
+const path = require('path');
 
-const relative = new Proxy({}, {
+
+function ObjProxy() {
+    return new Proxy({}, handler);
+}
+
+
+const handler = {
     get: function getter(target, key) {
-        if (key === '__esModule') {
+        let relativePath = '';
+        let pathContent = readCWDFile('path.json');
+
+        if (key === '__esModule' /*|| !(key in target) */) {
             return false;
         }
-        // cwd  toBase
-        if (key === 'path') {
-            let relativePath = '';
-        	try {
-    	        relativePath = '/' + require(path.resolve(process.cwd(), 'path.json')).rootPath;
-    	    } catch(error) {
-    	        relativePath = '';
-    	    }
-        	const rootPath = path.resolve(process.cwd()) + relativePath;
-        	delete require.cache[__filename];
-        	
-            return path.relative(module.parent.filename, rootPath) + '/';
+        
+        if (key === 'paths') {
+            return ObjProxy();
+        } 
+        else if (!isNaN(parseInt(key))) {
+            if (pathContent !== '') {
+                relativePath = '/' + pathContent.paths[key];
+            } else {
+                relativePath = '';
+            }
         }
+        else {     
+            if (pathContent !== '') {
+                relativePath = '/' + pathContent[key];
+            } else {
+                relativePath = '';
+            }
+
+        }
+
+        let rootPath = path.resolve(process.cwd()) + relativePath;
+        delete require.cache[__filename];
+
+        return path.relative(module.parent.filename, rootPath) + '/';
        
     }
-});
+
+};
 
 
-module.exports = relative;
-//export default relative; 
+let cachedPath = {};
+function readCWDFile(file = '') {
+    try {
+        if(!cachedPath[file]) {
+            cachedPath[file] = require(path.resolve(process.cwd(), file));
+        }
+    } catch (error) {
+        cachedPath[file] = '';
+    }
+  
+    return cachedPath[file];
+}
+
+
+
+module.exports = ObjProxy();
