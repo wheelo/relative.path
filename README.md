@@ -27,7 +27,7 @@ Since the library uses ES2015 `Proxy` as the dependency. You'd better use the li
 ```
 
 - Then, you should use the library in your js file this way:
-```sh
+```js
 import relative from 'relative.path';
 
 
