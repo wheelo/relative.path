@@ -1,5 +1,6 @@
 {
-	"path": "src/lib",
-	"randomPath": "randomPath",
-	"paths": ["src", "src/lib"]
+	"target": "test/a/target.js",
+	"fullpath": "test/a/b/c/d/e/f/g/h",
+	"path1": "test/a/b/c/d/e/f/g",
+	"randomPath": "randomPath"
 }

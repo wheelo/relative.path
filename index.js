@@ -41,10 +41,11 @@ const handler = {
 
         let rootPath = path.resolve(process.cwd()) + relativePath;
 
-        const relative = path.relative(module.parent.filename, rootPath) + '/';
+        const relative = path.relative(module.parent.filename, rootPath);
         delete require.cache[__filename];
-
-        return relative;
+        // const lastIndex = relative.lastIndexOf('./');
+        // relative.slice(3, lastIndex + 2);
+        return relative.slice(3);
     }
 
 };
