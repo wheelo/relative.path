@@ -1,5 +1,6 @@
 {
 	"target": "test/a/target.js",
+	"targetPath": "test/a",
 	"fullpath": "test/a/b/c/d/e/f/g/h",
 	"path1": "test/a/b/c/d/e/f/g",
 	"randomPath": "randomPath"

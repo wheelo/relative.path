@@ -1,6 +1,6 @@
 {
   "name": "relative.path",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "always return the relative path from the current working file",
   "main": "index.js",
   "scripts": {

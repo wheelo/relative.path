@@ -32,7 +32,7 @@ import relative from 'relative.path';
 console.log(relative.path); 	
 // You must use the 'require'  instead of 'import' to import related library
 // Though, the print out value is correct 😂
-const lib = require(relative.path + 'src/lib/xxx');
+const lib = require(relative.path + '/src/lib/xxx');
 ```
 - **Multiple Paths Mode**
 
