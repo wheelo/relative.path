@@ -8,7 +8,7 @@ It means you will no longer waste time figuring out how many levels of relative 
 Since the library uses ES2015 `Proxy` as the dependency. You'd better use the library with the Node version &ge;6.
 
 ## Usage
-**Note:** Please also read the [Caveats] below!
+**Note:** Please also read the [Caveats](#caveats)!
 
 - Install the npm package use the command:
 ```sh
@@ -43,7 +43,7 @@ There are two choices you can opt in to denote the `Multiple Paths` Mode. Firstl
 const libRandom = require(relative.randomPath + '/xxx');
 const libArray = require(relative.paths[1] + '/xxx');
 ```
-**Caveats**
+### Caveats
 - When you omit the file **path.json**，the default path is your **CWD**, i.e. the root path of your project 
 - You must use the `require` instead of `import` to import the file in your current file, though the print out value is correct
 - Any time you need more accurate infomation about the **full path**, plz refer to other Node.js api solutions. For example, if you want to get the path: current js directory + `xxx/yyy`, you could use the Node api like this: `path.resolve(__dirname, xxx/aaa, ../yyy)`
